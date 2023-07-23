@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h2 class="display-4">About Brain Tumor Detection</h2>
+        <p class="lead">Brain Tumor Detection is an application designed to assist in the diagnosis and classification of brain tumors using artificial intelligence.</p>
+        <hr class="my-4">
+        <h3>Types of Brain Tumors</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{{ url_for('static', filename='glioma.jpg') }}" class="card-img-top" alt="Glioma">
+                    <div class="card-body">
+                        <h5 class="card-title">Glioma</h5>
+                        <p class="card-text">Gliomas are tumors that originate in the glial cells of the brain. They can be either benign or malignant and can occur in different parts of the brain.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{{ url_for('static', filename='meningioma.jpg') }}" class="card-img-top" alt="Meningioma">
+                    <div class="card-body">
+                        <h5 class="card-title">Meningioma</h5>
+                        <p class="card-text">Meningiomas are tumors that develop in the meninges, the protective membranes that surround the brain and spinal cord. They are usually benign and slow-growing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{{ url_for('static', filename='pituitary.jpg') }}" class="card-img-top" alt="Pituitary Tumor">
+                    <div class="card-body">
+                        <h5 class="card-title">Pituitary Tumor</h5>
+                        <p class="card-text">Pituitary tumors are growths that develop in the pituitary gland, a small gland located at the base of the brain. They can cause hormonal imbalances and affect various bodily functions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{{ url_for('static', filename='notumor.jpg') }}" class="card-img-top" alt="No Tumor">
+                    <div class="card-body">
+                        <h5 class="card-title">No Tumor</h5>
+                        <p class="card-text">Not all brain abnormalities are tumors. Some conditions may mimic the appearance of tumors on scans, but they are not characterized by abnormal cell growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

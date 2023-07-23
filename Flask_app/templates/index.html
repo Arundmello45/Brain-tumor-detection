@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% block content %}
+<head>
+    <style>
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 0;
+    color: inherit;
+}
+    </style>
+</head>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2 class="mb-4">Welcome to Brain Tumor Detection</h2>
+            <p class="lead">Diagnosing and classifying brain tumors can be a complex task. Our application utilizes artificial intelligence to assist in the detection and analysis of brain tumors, helping medical professionals make more accurate diagnoses.</p>
+            <p>With advanced machine learning algorithms, our application can analyze brain scan images and provide insights into the presence and type of brain tumor, such as glioma, meningioma, pituitary tumor, or no tumor.</p>
+            <a href="#prediction-section" class="btn btn-primary mt-3">Get Started</a>
+        </div>
+        <div class="col-lg-6">
+            <img src="{{ url_for('static', filename='home.jpg') }}" class="img-fluid rounded" alt="Brain Tumor Detection">
+        </div>
+    </div>
+</div>
+<section id="prediction-section" class="bg-light py-5">
+<div class="container">
+    <h2 class="text-center mb-4">Try Our Brain Tumor Detection</h2>
+    <div class="row">
+    <div class="col-md-6">
+        <img src="{{ url_for('static', filename='home1.WEBP') }}" class="img-fluid rounded" alt="Brain Tumor Prediction">
+    </div>
+    <div class="col-md-6">
+    <h4 class="mb-3" style="margin-top:2rem;">Fast and Accurate Results</h4>
+    <p>Upload your brain scan image and let our AI-powered model analyze it within seconds. Our advanced algorithms provide fast and accurate results, helping medical professionals make informed decisions.</p>
+    <h4 class="mb-3">User-Friendly Interface</h4>
+    <p>Our user-friendly interface makes it easy to upload images, view predictions, and navigate through the application. You don't need to be an AI expert to use our Brain Tumor Detection tool.</p>
+</div>
+</div>
+<section id="prediction" class="bg-light py-5">
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+    <div class="custom-file" style="width:400px;left: 30%;">
+        <input type="file" class="custom-file-input" id="imageUpload" name="file" accept=".png, .jpg, .jpeg">
+        <label class="custom-file-label" for="imageUpload">Choose image...</label>
+    </div>
+    </form>
+    <div class="image-section"  style="display:none;left: 30%;">
+        <div class="img-preview" style="left: 30%;">
+        <div id="imagePreview" style="left: 30%;">
+        </div>
+            <section style="left: 30%;top:10px; width: 300px;">
+                <button type="button" class="btn btn-primary btn-lg "  style="left: 30%;margin-top: 0.5rem;margin-left: 25%;" id="btn-predict">Predict!</button>
+        <div class="loader" style="left:70%;" style="display:none;"></div>
+    
+    <h3 id="result">
+        <span> </span>
+    </h3>
+</section>
+</div>
+</section>
+
+{% endblock %}
